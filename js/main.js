@@ -9,13 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionTrue4 = document.getElementById("explicationScreenTrue4");
     let redoBtn = document.getElementById("redoBtn");
 
-    // let nextBtn = document.getElementsByClassName("toNextQuestion");
-    // let previousBtn = document.getElementsByClassName("toPreviousQuestion");
-
     let answerCount = document.getElementById("answerCount");
 
 
-    let checkBtns = document.querySelectorAll(".toNextQuestion");
+    let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
     checkBtns.forEach(function (checkBtn) {
         checkBtn.addEventListener('click', function () {
             let question = this.getAttribute('data-question');
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let answer = document.querySelector("input[name=" + question + "]:checked").value;
             console.log(answer);
             localStorage.setItem(question, answer);
-            // answerCount.innerHTML = answerCount.lenght;
         })
     })
 
@@ -37,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         questionTrue4.style.display = "none";
         questionFalse4.style.display = "none";
     })
-    let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Selection réponse juste ou fausse
+    let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Vérification de la réponse et affichage des textes d'explication
     question1Answers.forEach(function (question1Answer) {
         question1Answer.addEventListener('click', function () {
             if (question1Answer.value == 18) {
@@ -49,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 questionTrue1.style.display = "none";
             }
             console.log(answerCount);
-
-
         })
     })
 
@@ -66,10 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 questionFalse2.style.display = "block";
             }
             console.log(answerCount);
-
-            // nextBtn.style.display = "block";
-            // previousBtn.style.display = "block";
-
         })
     })
 
@@ -85,9 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 questionFalse3.style.display = "block";
             }
             console.log(answerCount);
-            // nextBtn.style.display = "block";
-            // previousBtn.style.display = "block";
-
         })
     })
 
@@ -103,8 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 questionFalse4.style.display = "block";
             }
             console.log(answerCount);
-            // nextBtn.style.display = "block";
-            // previousBtn.style.display = "block";
         })
     })
 
