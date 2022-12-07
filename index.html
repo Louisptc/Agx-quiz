@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>…
+    <meta charset="UTF-8">
+    <title>quiz perso</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.15/dist/css/uikit.min.css"/>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.15/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.15/dist/js/uikit-icons.min.js"></script>
+
+    <!-- Liens perso -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+</head>
+<body>
+<main class="quizz">
+    <section class="uk-flex uk-flex-middle uk-flex-center" id="introText" uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black">
+                <h2 class="uk-text-center"><strong>Bienvenue sur ce quiz</strong></h2>
+                <div><h4><u>Points abordés dans le quiz :</u></h4>
+                    <ul>
+                        <li>lien vers un cours ou un article en rapport avec le quiz</li>
+                        <li>lien vers un cours ou un article en rapport avec le quiz</li>
+                        <li>lien vers un cours ou un article en rapport avec le quiz</li>
+                        <li>lien vers un cours ou un article en rapport avec le quiz</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+                <a class="uk-button uk-button-primary uk-width-large" href="#questionScreen1">Commencer le quiz</a>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </section>
+    <div uk-sticky="start: #introText; end: #questionScreen3; offset:400" uk-width-viewport>
+        <div class=" uk-position-right uk-margin-medium-right">
+            <div class="uk-align-center uk-padding uk-height-2xlarge" style="border : 5px solid black">
+                <h4>QUESTIONS :</h4>
+                <ul>
+                    <li>
+                        <a href="#questionScreen1">Quel est mon âge ?</a>
+                    </li>
+                    <li>
+                        <a href="#questionScreen2">Aimes tu les quizs ?</a>
+                    </li>
+                    <li>
+                        <a href="#questionScreen3">Reviendras-tu pour les prochains quizs ?</a>
+                    </li>
+                    <li>
+                        <a href="#questionScreen4">Faut il plus de questions ?</a>
+                    </li>
+                </ul>
+                <p>Nombre de questions faites : X/4</p>
+                <p>Nombre de bonnes réponses : <span id="answerCount"></span> bonnes réponses</p>
+            </div>
+        </div>
+    </div>
+    <section class="uk-flex uk-flex-middle uk-flex-center" id="questionScreen1" uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black">
+                <legend>Quel est mon âge ?</legend>
+                <div id="answers">
+                    <div>
+                        <label for="q1"><input type="radio" id="q1" name="quizQuestion1" value="42">42</label>
+                    </div>
+                    <div>
+                        <label for="q2"><input type="radio" id="q2" name="quizQuestion1" value="36">36</label>
+                    </div>
+                    <div>
+                        <label for="q3"><input type="radio" id="q3" name="quizQuestion1" value="18">18</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="explicationScreenFalse1" style="display : none;border : 5px solid black" class="uk-padding">
+                <p>
+                    Réponse fausse,
+                    car ……………</p></div>
+            <div id="explicationScreenTrue1" style="display: none;border : 5px solid black " class="uk-padding"><p>
+                Réponse juste</p>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+                <a data-question="quizQuestion1" class=" toNextQuestion uk-button uk-button-primary uk-width-large"
+                   href="#questionScreen2">Next</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="uk-flex uk-flex-middle uk-flex-center" id="questionScreen2" uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black">
+                <legend>Aimes tu les quizs ?</legend>
+                <div>
+                    <label for="q21"><input type="radio" id="q21" name="quizQuestion2" value="Oui">Oui</label>
+                </div>
+                <div>
+                    <label for="q22"><input type="radio" id="q22" name="quizQuestion2" value="Non">Non</label>
+                </div>
+                <div>
+                    <label for="q23"><input type="radio" id="q23" name="quizQuestion2" value="Absolument pas">Absolument
+                        pas</label>
+                </div>
+            </div>
+            <div id="explicationScreenFalse2" style="display : none;border : 5px solid black" class="uk-padding"><p>
+                Réponse fausse,
+                car ……………</p></div>
+            <div id="explicationScreenTrue2" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                Réponse juste</p>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+                <a class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-medium"
+                   href="#questionScreen1">Previous</a>
+                <a data-question="quizQuestion2" class="toNextQuestion uk-button uk-button-primary uk-width-medium"
+                   href="#questionScreen3">Next</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="uk-flex uk-flex-middle uk-flex-center" id="questionScreen3" uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black">
+                <legend>Reviendras-tu pour les prochains quizs ?</legend>
+                <div>
+                    <label for="q31"><input type="radio" id="q31" name="quizQuestion3" value="Oui">Oui</label>
+                </div>
+                <div>
+                    <label for="q32"><input type="radio" id="q32" name="quizQuestion3" value="Non">Non</label>
+                </div>
+                <div>
+                    <label for="q33"><input type="radio" id="q33" name="quizQuestion3" value="Absolument pas">Absolument
+                        pas</label>
+                </div>
+            </div>
+            <div id="explicationScreenFalse3" style="display : none;border : 5px solid black" class="uk-padding"><p>
+                Réponse fausse,
+                car ……………</p></div>
+            <div id="explicationScreenTrue3" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                Réponse juste</p>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+
+                <a class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-medium"
+                   href="#questionScreen2">Previous</a>
+                <a data-question="quizQuestion3" class="toNextQuestion uk-button uk-button-primary uk-width-medium"
+                   href="#questionScreen4">Next</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="uk-flex uk-flex-middle uk-flex-center" id="questionScreen4" uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black">
+                <legend>Faut il plus de questions ?</legend>
+                <div>
+                    <label for="q41"><input type="radio" id="q41" name="quizQuestion4" value="Oui">Oui</label>
+                </div>
+                <div>
+                    <label for="q42"><input type="radio" id="q42" name="quizQuestion4" value="Non">Non</label>
+
+                </div>
+                <div>
+                    <label for="q43"><input type="radio" id="q43" name="quizQuestion4" value="Absolument pas">Absolument
+                        pas</label>
+                </div>
+            </div>
+            <div id="explicationScreenFalse4" style="display : none;border : 5px solid black" class="uk-padding"><p>
+                Réponse fausse,
+                car ……………</p></div>
+            <div id="explicationScreenTrue4" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                Réponse juste</p>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+                <a class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-medium"
+                   href="#questionScreen3">Previous</a>
+                <a data-question="quizQuestion4" class="toNextQuestion uk-button uk-button-primary uk-width-medium"
+                   href="#resultScreen">Fin du quiz</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section data-question="resultScreen" class="uk-flex uk-flex-middle uk-flex-center" id="resultScreen"
+             uk-height-viewport>
+        <div>
+            <div class="uk-align-center uk-padding uk-width-2xlarge" style="border : 5px solid black;display: flex">
+                <h4><strong><u>Résultats</u></strong></h4>
+                <div>
+                    <iconify-icon icon="carbon:progress-bar-round" width="300" height="300"></iconify-icon>
+                </div>
+                <div class="uk-padding"><p>70% de réussite</p>
+                <h5>Sujets à revoir</h5>
+                    <ul class="uk-list uk-list-hyphen" >
+                        <li>
+                            <a href="#questionScreen1">Quel est mon âge ?</a>
+                        </li>
+                        <li>
+                            <a href="#questionScreen4">Faut il plus de questions ?</a>
+                        </li>
+                    </ul></div>
+            </div>
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
+                <a class="uk-button uk-button-primary uk-margin-small-right uk-width-medium"
+                   id="redoBtn" href="#introText">Re faire le test</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

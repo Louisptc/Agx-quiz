@@ -1,0 +1,54 @@
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+}
+
+input:checked {
+    border: 6px solid #7ca236;
+}
+
+.uk-button {
+    border-radius: 6px;
+    padding: 0.75rem 3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.uk-button-primary {
+    background-color: #7ca236;
+    color: white;
+
+}
+
+.uk-button-primary:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: #7ca236;
+
+}
+
+/*.toNextQuestion {*/
+/*    visibility: hidden;*/
+/*}*/
+
+
+/*.toPreviousQuestion {*/
+/*    visibility: hidden;*/
+/*}*/
+
+
+
+
