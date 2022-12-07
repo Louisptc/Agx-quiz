@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
-    redoBtn.addEventListener('click', function () {
+    redoBtn.addEventListener('click', function () { //recommencer le quiz et effacer les réponses
         questionTrue1.style.display = "none";
         questionFalse1.style.display = "none";
         questionTrue2.style.display = "none";
