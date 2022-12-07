@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         questionTrue4.style.display = "none";
         questionFalse4.style.display = "none";
     })
-    let question1Answers = document.querySelectorAll("input[name=quizQuestion1]");
+    let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Selection réponse juste ou fausse
     question1Answers.forEach(function (question1Answer) {
         question1Answer.addEventListener('click', function () {
             if (question1Answer.value == 18) {
