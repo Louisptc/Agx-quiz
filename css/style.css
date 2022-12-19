@@ -59,6 +59,11 @@ input:checked {
     color: white;
 }
 
+.uk-button-secondary:active {
+    background-color: black;
+    color: white;
+}
+
 
 
 
