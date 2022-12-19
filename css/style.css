@@ -1,23 +1,22 @@
-
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
 
     border: 2px solid #999;
     transition: 0.2s all linear;
     margin-right: 5px;
 
     position: relative;
-    top: 4px;
+    top: 8px;
 }
 
 input:checked {
-    border: 6px solid #7ca236;
+    border: 10px solid #7ca236;
 }
 
 .uk-button {
@@ -27,9 +26,15 @@ input:checked {
     cursor: pointer;
 }
 
+.uk-button-small {
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
 .uk-button-primary {
     background-color: #7ca236;
-    color: white;
+    color: black;
 
 }
 
@@ -40,6 +45,19 @@ input:checked {
 
 }
 
+.uk-button-secondary{
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+
+}
+
+.uk-button-secondary:hover {
+    background-color: black;
+    color: white;
+}
 
 
 
