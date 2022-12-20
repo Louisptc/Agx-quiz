@@ -1,4 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+
     let questionFalse1 = document.getElementById("explicationScreenFalse1");
     let questionTrue1 = document.getElementById("explicationScreenTrue1");
     let questionFalse2 = document.getElementById("explicationScreenFalse2");
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let answer = document.querySelector("input[name=" + question + "]:checked").value;
             console.log(answer);
             localStorage.setItem(question, answer);
+            checkAnswer();
         })
     })
 
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         questionTrue4.style.display = "none";
         questionFalse4.style.display = "none";
         localStorage.clear();
+        checkAnswer();
     })
     let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Vérification de la réponse et affichage des textes d'explication
     question1Answers.forEach(function (question1Answer) {
@@ -97,33 +101,40 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
-    let hasAnswered1 = (localStorage.getItem("quizQuestion1") !== null);
-    let hasAnswered2 = (localStorage.getItem("quizQuestion2") !== null);
-    let hasAnswered3 = (localStorage.getItem("quizQuestion3") !== null);
-    let hasAnswered4 = (localStorage.getItem("quizQuestion4") !== null);
+    function checkAnswer () {
+        let hasAnswered1 = (localStorage.getItem("quizQuestion1") !== null);
+        let hasAnswered2 = (localStorage.getItem("quizQuestion2") !== null);
+        let hasAnswered3 = (localStorage.getItem("quizQuestion3") !== null);
+        let hasAnswered4 = (localStorage.getItem("quizQuestion4") !== null);
+        // console.log(hasAnswered1);
+        // console.log(hasAnswered2);
+        // console.log(hasAnswered3);
+        // console.log(hasAnswered4);
 
-
-    if (hasAnswered1) {
-        navToQ1.classList.add("answered");
-        alert("Vous avez déjà répondu à cette question");
-        console.log("Vous avez déjà répondu à cette question");
+        if (hasAnswered1) {
+            navToQ1.classList.add("answered");
+        }
+        else {
+            navToQ1.classList.remove("answered");
+        }
+        if (hasAnswered2) {
+            navToQ2.classList.add("answered");
+        }
+        else {
+            navToQ2.classList.remove("answered");
+        }
+        if (hasAnswered3) {
+            navToQ3.classList.add("answered");
+        }
+        else {
+            navToQ3.classList.remove("answered");
+        }
+        if (hasAnswered4) {
+            navToQ4.classList.add("answered");
+        }
+        else {
+            navToQ4.classList.remove("answered");
+        }
     }
-    if (hasAnswered2) {
-        navToQ2.classList.add("answered");
-        console.log("Vous avez déjà répondu à cette question");
-        alert("Vous avez déjà répondu à cette question");
-    }
-    if (hasAnswered3) {
-        navToQ3.classList.add("answered");
-        console.log("Vous avez déjà répondu à cette question");
-        alert("Vous avez déjà répondu à cette question");
-    }
-    if (hasAnswered4) {
-        navToQ4.classList.add("answered");
-        console.log("Vous avez déjà répondu à cette question");
-        alert("Vous avez déjà répondu à cette question");
-    }
-
 
 })
-
