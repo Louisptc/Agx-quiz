@@ -64,6 +64,9 @@ input:checked {
     color: white;
 }
 
-
+.answered {
+    background-color: #7ca236;
+    color: white;
+}
 
 

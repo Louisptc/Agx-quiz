@@ -53,7 +53,8 @@
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-small" id="questionScreen1" uk-height-viewport>
         <div>
             <h1><u>Quiz : Titre du quiz</u></h1>
-            <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
+            <div class="uk-align-center uk-padding uk-width-xlarge@s"
+                 style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4>1 : Quel est mon âge ?</h4>
                 <div id="answers">
                     <ol style="font-size: large">
@@ -86,14 +87,15 @@
             <div class="uk-position-top-left uk-margin-medium uk-margin-medium-left">
                 <div uk-sticky="start: 50; end: #questionScreen4; offset: 50"
                      style="background-color: darkgrey; border-radius: 10px">
-                    <div class="uk-flex uk-flex-center uk-padding">
-                        <a class="uk-button-small uk-button-secondary uk-margin-small-left"
+                    <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des questions :</strong></p>
+                    <div class="uk-flex uk-flex-center">
+                        <a id="navToQ1" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen1">1</a>
-                        <a class="uk-button-small uk-button-secondary uk-margin-small-left"
+                        <a id="navToQ2" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen2">2</a>
-                        <a class="uk-button-small uk-button-secondary uk-margin-small-left"
+                        <a id="navToQ3" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen3">3</a>
-                        <a class="uk-button-small uk-button-secondary uk-margin-small-left"
+                        <a id="navToQ4" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen4">4</a>
                     </div>
                     <div class="uk-padding">
@@ -107,8 +109,9 @@
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-medium" id="questionScreen2" uk-height-viewport>
         <div>
             <h1><u>Quiz : Titre du quiz</u></h1>
-            <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
-                <h4>Aimes tu les quizs ?</h4>
+            <div class="uk-align-center uk-padding uk-width-xlarge@s"
+                 style="background-color: rgb(236,236,236);border-radius: 15px">
+                <h4>2 : Aimes tu les quizs ?</h4>
                 <div>
                     <label for="q21"><input type="radio" id="q21" name="quizQuestion2" value="Oui">Oui</label>
                 </div>
@@ -139,8 +142,9 @@
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-small" id="questionScreen3" uk-height-viewport>
         <div>
             <h1><u>Quiz : Titre du quiz</u></h1>
-            <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
-                <h4>Reviendras-tu pour les prochains quizs ?</h4>
+            <div class="uk-align-center uk-padding uk-width-xlarge@s"
+                 style="background-color: rgb(236,236,236);border-radius: 15px">
+                <h4>3 : Reviendras-tu pour les prochains quizs ?</h4>
                 <div>
                     <label for="q31"><input type="radio" id="q31" name="quizQuestion3" value="Oui">Oui</label>
                 </div>
@@ -172,8 +176,9 @@
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-small" id="questionScreen4" uk-height-viewport>
         <div>
             <h1><u>Quiz : Titre du quiz</u></h1>
-            <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
-                <h4>Faut il plus de questions ?</h4>
+            <div class="uk-align-center uk-padding uk-width-xlarge@s"
+                 style="background-color: rgb(236,236,236);border-radius: 15px">
+                <h4>4 : Faut il plus de questions ?</h4>
                 <div>
                     <label for="q41"><input type="radio" id="q41" name="quizQuestion4" value="Oui">Oui</label>
                 </div>

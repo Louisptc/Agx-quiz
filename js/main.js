@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionFalse4 = document.getElementById("explicationScreenFalse4");
     let questionTrue4 = document.getElementById("explicationScreenTrue4");
     let redoBtn = document.getElementById("redoBtn");
-
     let answerCount = document.getElementById("answerCount");
+    let navToQ1 = document.getElementById("navToQ1");
+    let navToQ2 = document.getElementById("navToQ2");
+    let navToQ3 = document.getElementById("navToQ3");
+    let navToQ4 = document.getElementById("navToQ4");
 
 
     let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         questionFalse3.style.display = "none";
         questionTrue4.style.display = "none";
         questionFalse4.style.display = "none";
+        localStorage.clear();
     })
     let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Vérification de la réponse et affichage des textes d'explication
     question1Answers.forEach(function (question1Answer) {
@@ -92,6 +96,33 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(answerCount);
         })
     })
+
+    let hasAnswered1 = (localStorage.getItem("quizQuestion1") !== null);
+    let hasAnswered2 = (localStorage.getItem("quizQuestion2") !== null);
+    let hasAnswered3 = (localStorage.getItem("quizQuestion3") !== null);
+    let hasAnswered4 = (localStorage.getItem("quizQuestion4") !== null);
+
+
+    if (hasAnswered1) {
+        navToQ1.classList.add("answered");
+        alert("Vous avez déjà répondu à cette question");
+        console.log("Vous avez déjà répondu à cette question");
+    }
+    if (hasAnswered2) {
+        navToQ2.classList.add("answered");
+        console.log("Vous avez déjà répondu à cette question");
+        alert("Vous avez déjà répondu à cette question");
+    }
+    if (hasAnswered3) {
+        navToQ3.classList.add("answered");
+        console.log("Vous avez déjà répondu à cette question");
+        alert("Vous avez déjà répondu à cette question");
+    }
+    if (hasAnswered4) {
+        navToQ4.classList.add("answered");
+        console.log("Vous avez déjà répondu à cette question");
+        alert("Vous avez déjà répondu à cette question");
+    }
 
 
 })
