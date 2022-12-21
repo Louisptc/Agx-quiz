@@ -65,12 +65,17 @@ input:checked {
 }
 
 .answered {
-    background-color: #7ca236;
+    background-color: black;
     color: white;
 }
 
 .answeredFalse {
     background-color: #ff0000;
+    color: white;
+}
+
+.answeredRight {
+    background-color: #7ca236;
     color: white;
 }
 

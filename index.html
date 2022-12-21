@@ -47,20 +47,24 @@
                 <h4>1 : Quel est mon âge ?</h4>
                 <div id="answers">
                     <ol style="font-size: large">
-                        <li><label for="q1"><input type="radio" id="q1" name="quizQuestion1" value="42">42</label>
+                        <li><label for="q1"><input type="radio" id="q1" name="quizQuestion1" autocomplete="off"
+                                                   value="42">42</label>
                         </li>
                         <li>
-                            <label for="q2"><input type="radio" id="q2" name="quizQuestion1" value="36">36</label>
+                            <label for="q2"><input type="radio" id="q2" name="quizQuestion1" autocomplete="off"
+                                                   value="36">36</label>
                         </li>
                         <li>
-                            <label for="q3"><input type="radio" id="q3" name="quizQuestion1" value="18">18</label>
+                            <label for="q3"><input type="radio" id="q3" name="quizQuestion1" autocomplete="off"
+                                                   value="18">18</label>
                         </li>
                     </ol>
                 </div>
                 <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary"
+                    <a class="uk-button-small uk-button-primary" id="indice1"
                        href="#">Indice</a>
                 </div>
+                <div><p id="indiceText1" style="display: none">ici la pop up de l'indice</p></div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-cente">
                 <a data-question="quizQuestion1" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
@@ -98,7 +102,7 @@
                            href="#questionScreen4">4</a>
                     </div>
                     <div class="uk-padding">
-                        <p>Nombre de questions faites : <span id="questionAnswered">X</span>/4</p>
+                        <p>Nombre de questions faites : <span id="questionAnswered">0</span>/4</p>
                     </div>
                 </div>
             </div>
@@ -112,17 +116,18 @@
                  style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4>2 : Aimes tu les quizs ?</h4>
                 <div>
-                    <label for="q21"><input type="radio" id="q21" name="quizQuestion2" value="Oui">Oui</label>
+                    <label for="q21"><input type="radio" id="q21" name="quizQuestion2" autocomplete="off" value="Oui">Oui</label>
                 </div>
                 <div>
-                    <label for="q22"><input type="radio" id="q22" name="quizQuestion2" value="Non">Non</label>
+                    <label for="q22"><input type="radio" id="q22" name="quizQuestion2" autocomplete="off" value="Non">Non</label>
                 </div>
                 <div>
-                    <label for="q23"><input type="radio" id="q23" name="quizQuestion2" value="Absolument pas">Absolument
+                    <label for="q23"><input type="radio" id="q23" name="quizQuestion2" autocomplete="off"
+                                            value="Absolument pas">Absolument
                         pas</label>
                 </div>
                 <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary uk-margin-top"
+                    <a class="uk-button-small uk-button-primary uk-margin-top" id="indice2"
                        href="#">Indice</a>
                 </div>
             </div>
@@ -159,17 +164,18 @@
                  style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4>3 : Reviendras-tu pour les prochains quizs ?</h4>
                 <div>
-                    <label for="q31"><input type="radio" id="q31" name="quizQuestion3" value="Oui">Oui</label>
+                    <label for="q31"><input type="radio" id="q31" name="quizQuestion3" autocomplete="off" value="Oui">Oui</label>
                 </div>
                 <div>
-                    <label for="q32"><input type="radio" id="q32" name="quizQuestion3" value="Non">Non</label>
+                    <label for="q32"><input type="radio" id="q32" name="quizQuestion3" autocomplete="off" value="Non">Non</label>
                 </div>
                 <div>
-                    <label for="q33"><input type="radio" id="q33" name="quizQuestion3" value="Absolument pas">Absolument
+                    <label for="q33"><input type="radio" id="q33" name="quizQuestion3" autocomplete="off"
+                                            value="Absolument pas">Absolument
                         pas</label>
                 </div>
                 <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary uk-margin-top"
+                    <a class="uk-button-small uk-button-primary uk-margin-top" id="indice3"
                        href="#">Indice</a>
                 </div>
             </div>
@@ -207,25 +213,26 @@
                  style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4>4 : Faut il plus de questions ?</h4>
                 <div>
-                    <label for="q41"><input type="radio" id="q41" name="quizQuestion4" value="Oui">Oui</label>
+                    <label for="q41"><input type="radio" id="q41" name="quizQuestion4" autocomplete="off" value="Oui">Oui</label>
                 </div>
                 <div>
-                    <label for="q42"><input type="radio" id="q42" name="quizQuestion4" value="Non">Non</label>
+                    <label for="q42"><input type="radio" id="q42" name="quizQuestion4" autocomplete="off" value="Non">Non</label>
 
                 </div>
                 <div>
-                    <label for="q43"><input type="radio" id="q43" name="quizQuestion4" value="Absolument pas">Absolument
+                    <label for="q43"><input type="radio" id="q43" name="quizQuestion4" autocomplete="off"
+                                            value="Absolument pas">Absolument
                         pas</label>
                 </div>
                 <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary uk-margin-top"
+                    <a class=" uk-button-small uk-button-primary uk-margin-top" id="indice4"
                        href="#">Indice</a>
                 </div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
                 <a class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
                    href="#questionScreen3">Previous</a>
-                <a data-question="quizQuestion4" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
+                <a data-question="quizQuestion4" id="endOfTheQuiz" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#resultScreen">Fin</a>
             </div>
             <div id="explicationScreenFalse4" style="display : none;border : 5px solid black" class="uk-padding"><p>
@@ -252,7 +259,7 @@
             <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4><strong><u>Résultats</u></strong></h4>
                 <div class="uk-padding">
-                    <p>Score : <span id="answerTotal">X</span>/<span id="nbrQuestion">4</span> </p>
+                    <p>Score : <span id="answerTotal">X</span>/<span id="nbrQuestion">4</span></p>
                     <p><span id="pourcentage">X</span> % de réussite</p>
                     <h5>Sujets à revoir</h5>
                     <ul class="uk-list uk-list-hyphen">
