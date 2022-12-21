@@ -11,15 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.15/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.15/dist/js/uikit-icons.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
     <!-- Liens perso -->
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -42,12 +33,10 @@
                 </div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
-                <a class="uk-button uk-button-primary uk-width-expend" href="#questionScreen1">Commencer le quiz</a>
+                <a id="startBtn" class="uk-button uk-button-primary uk-width-expend" href="#questionScreen1">Commencer
+                    le quiz</a>
             </div>
         </div>
-    </section>
-
-    </div>
     </section>
 
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-small" id="questionScreen1" uk-height-viewport>
@@ -84,10 +73,20 @@
             <div id="explicationScreenTrue1" style="display: none;border : 5px solid black " class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div class=" uk-flex uk-flex-center uk-hidden@s">
+                <ul class="uk-pagination">
+                    <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
+                    <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
+                    <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
+                    <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
+                    <li><a href="#questionScreen2"><span uk-pagination-next></span></a></li>
+                </ul>
+            </div>
             <div class="uk-position-top-left uk-margin-medium uk-margin-medium-left uk-visible@s">
                 <div uk-sticky="start: 50; end: #questionScreen4; offset: 50"
                      style="background-color: darkgrey; border-radius: 10px">
-                    <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des questions :</strong></p>
+                    <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des questions
+                        :</strong></p>
                     <div class="uk-flex uk-flex-center">
                         <a id="navToQ1" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen1">1</a>
@@ -135,6 +134,16 @@
             <div id="explicationScreenTrue2" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div class=" uk-flex uk-flex-center uk-hidden@s">
+                <ul class="uk-pagination" uk-margin>
+                    <li><a href="#questionScreen1"><span uk-pagination-previous></span></a></li>
+                    <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
+                    <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
+                    <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
+                    <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
+                    <li><a href="#questionScreen3"><span uk-pagination-next></span></a></li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -168,6 +177,16 @@
                 car ……………</p></div>
             <div id="explicationScreenTrue3" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
+            </div>
+            <div class=" uk-flex uk-flex-center uk-hidden@s">
+                <ul class="uk-pagination" uk-margin>
+                    <li><a href="#questionScreen2"><span uk-pagination-previous></span></a></li>
+                    <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
+                    <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
+                    <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
+                    <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
+                    <li><a href="#questionScreen4"><span uk-pagination-next></span></a></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -203,8 +222,16 @@
             <div id="explicationScreenTrue4" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div class=" uk-flex uk-flex-center uk-hidden@s">
+                <ul class="uk-pagination" uk-margin>
+                    <li><a href="#questionScreen3"><span uk-pagination-previous></span></a></li>
+                    <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
+                    <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
+                    <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
+                    <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
+                </ul>
+            </div>
         </div>
-
     </section>
 
     <section data-question="resultScreen" class="uk-flex uk-flex-middle uk-flex-center uk-padding-small"

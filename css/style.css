@@ -45,7 +45,7 @@ input:checked {
 
 }
 
-.uk-button-secondary{
+.uk-button-secondary {
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -69,4 +69,23 @@ input:checked {
     color: white;
 }
 
+.answeredFalse {
+    background-color: #ff0000;
+    color: white;
+}
 
+.navToQ1Phone {
+    color: #000000;
+}
+
+.navToQ2Phone {
+    color: #000000;
+}
+
+.navToQ3Phone {
+    color: #000000;
+}
+
+.navToQ4Phone {
+    color: #000000;
+}
