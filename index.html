@@ -60,11 +60,11 @@
                         </li>
                     </ol>
                 </div>
-                <div class="uk-flex uk-flex-left">
+                <div class="uk-flex uk-flex-right">
                     <a class="uk-button-small uk-button-primary" id="indice1"
                        href="#">Indice</a>
                 </div>
-                <div><p id="indiceText1" style="display: none">ici la pop up de l'indice</p></div>
+                <div><p id="indiceText1" style="display: none">ici le texte de l'indice</p></div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-cente">
                 <a data-question="quizQuestion1" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
@@ -77,36 +77,40 @@
             <div id="explicationScreenTrue1" style="display: none;border : 5px solid black " class="uk-padding"><p>
                 Réponse juste</p>
             </div>
-            <div class=" uk-flex uk-flex-center uk-hidden@s">
-                <ul class="uk-pagination">
-                    <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
-                    <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
-                    <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
-                    <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
-                    <li><a href="#questionScreen2"><span uk-pagination-next></span></a></li>
-                </ul>
+            <div id="explicationScreenNoAnswer1" style="display: none;border : 5px solid black " class="uk-padding"><p>
+                La bonne réponse était </p>
             </div>
-            <div class="uk-position-top-left uk-margin-medium uk-margin-medium-left uk-visible@s">
-                <div uk-sticky="start: 50; end: #questionScreen4; offset: 50"
-                     style="background-color: darkgrey; border-radius: 10px">
-                    <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des questions
-                        :</strong></p>
-                    <div class="uk-flex uk-flex-center">
-                        <a id="navToQ1" class="uk-button-small uk-button-secondary uk-margin-small-left"
-                           href="#questionScreen1">1</a>
-                        <a id="navToQ2" class="uk-button-small uk-button-secondary uk-margin-small-left"
-                           href="#questionScreen2">2</a>
-                        <a id="navToQ3" class="uk-button-small uk-button-secondary uk-margin-small-left"
-                           href="#questionScreen3">3</a>
-                        <a id="navToQ4" class="uk-button-small uk-button-secondary uk-margin-small-left"
-                           href="#questionScreen4">4</a>
-                    </div>
-                    <div class="uk-padding">
-                        <p>Nombre de questions faites : <span id="questionAnswered">0</span>/4</p>
+                <div class=" uk-flex uk-flex-center uk-hidden@s">
+                    <ul class="uk-pagination">
+                        <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
+                        <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
+                        <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
+                        <li><a class="navToQ4Phone" href="#questionScreen4">4</a></li>
+                        <li><a href="#questionScreen2"><span uk-pagination-next></span></a></li>
+                    </ul>
+                </div>
+                <div class="uk-position-top-left uk-margin-medium uk-margin-medium-left uk-visible@s">
+                    <div uk-sticky="start: 50; end: #questionScreen4; offset: 50"
+                         style="background-color: darkgrey; border-radius: 10px">
+                        <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des
+                            questions
+                            :</strong></p>
+                        <div class="uk-flex uk-flex-center">
+                            <a id="navToQ1" class="uk-button-small uk-button-secondary uk-margin-small-left"
+                               href="#questionScreen1">1</a>
+                            <a id="navToQ2" class="uk-button-small uk-button-secondary uk-margin-small-left"
+                               href="#questionScreen2">2</a>
+                            <a id="navToQ3" class="uk-button-small uk-button-secondary uk-margin-small-left"
+                               href="#questionScreen3">3</a>
+                            <a id="navToQ4" class="uk-button-small uk-button-secondary uk-margin-small-left"
+                               href="#questionScreen4">4</a>
+                        </div>
+                        <div class="uk-padding">
+                            <p>Nombre de questions faites : <span id="questionAnswered">0</span>/4</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-medium" id="questionScreen2" uk-height-viewport>
@@ -126,13 +130,15 @@
                                             value="Absolument pas">Absolument
                         pas</label>
                 </div>
-                <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary uk-margin-top" id="indice2"
+                <div class="uk-flex uk-flex-right">
+                    <a class="uk-button-small uk-button-primary" id="indice2"
                        href="#">Indice</a>
                 </div>
+                <div><p id="indiceText2" style="display: none">ici le texte de l'indice</p></div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
-                <a data-question="quizQuestion2" class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
+                <a data-question="quizQuestion2"
+                   class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
                    href="#questionScreen1">Previous</a>
                 <a data-question="quizQuestion2" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#questionScreen3">Next</a>
@@ -143,9 +149,13 @@
             <div id="explicationScreenTrue2" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div id="explicationScreenNoAnswer2" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                La bonne réponse était... </p>
+            </div>
             <div class=" uk-flex uk-flex-center uk-hidden@s">
                 <ul class="uk-pagination" uk-margin>
-                    <li><a href="#questionScreen1"><span uk-pagination-previous></span></a></li>
+                    <li><a href="#questionScreen1"><span class="toPreviousQuestion" uk-pagination-previous></span></a>
+                    </li>
                     <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
                     <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
                     <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
@@ -174,14 +184,16 @@
                                             value="Absolument pas">Absolument
                         pas</label>
                 </div>
-                <div class="uk-flex uk-flex-left">
-                    <a class="uk-button-small uk-button-primary uk-margin-top" id="indice3"
+                <div class="uk-flex uk-flex-right">
+                    <a class="uk-button-small uk-button-primary" id="indice3"
                        href="#">Indice</a>
                 </div>
+                <div><p id="indiceText3" style="display: none">ici le texte de l'indice</p></div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
 
-                <a data-question="quizQuestion3" class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
+                <a data-question="quizQuestion3"
+                   class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
                    href="#questionScreen2">Previous</a>
                 <a data-question="quizQuestion3" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#questionScreen4">Next</a>
@@ -192,9 +204,13 @@
             <div id="explicationScreenTrue3" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div id="explicationScreenNoAnswer3" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                La bonne réponse était... </p>
+            </div>
             <div class=" uk-flex uk-flex-center uk-hidden@s">
                 <ul class="uk-pagination" uk-margin>
-                    <li><a href="#questionScreen2"><span uk-pagination-previous></span></a></li>
+                    <li><a href="#questionScreen2"><span class="toPreviousQuestion" uk-pagination-previous></span></a>
+                    </li>
                     <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
                     <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
                     <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
@@ -224,15 +240,18 @@
                                             value="Absolument pas">Absolument
                         pas</label>
                 </div>
-                <div class="uk-flex uk-flex-left">
-                    <a class=" uk-button-small uk-button-primary uk-margin-top" id="indice4"
+                <div class="uk-flex uk-flex-right">
+                    <a class=" uk-button-small uk-button-primary" id="indice4"
                        href="#">Indice</a>
                 </div>
+                <div><p id="indiceText4" style="display: none">ici le texte de l'indice</p></div>
             </div>
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-center uk-padding ">
-                <a data-question="quizQuestion4" class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
+                <a data-question="quizQuestion4"
+                   class="toPreviousQuestion uk-button uk-button-primary uk-margin-small-right uk-width-expend"
                    href="#questionScreen3">Previous</a>
-                <a data-question="quizQuestion4" id="endOfTheQuiz" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
+                <a data-question="quizQuestion4" id="endOfTheQuiz"
+                   class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#resultScreen">Fin</a>
             </div>
             <div id="explicationScreenFalse4" style="display : none;border : 5px solid black" class="uk-padding"><p>
@@ -241,9 +260,13 @@
             <div id="explicationScreenTrue4" style="display: none;border : 5px solid black" class="uk-padding"><p>
                 Réponse juste</p>
             </div>
+            <div id="explicationScreenNoAnswer4" style="display: none;border : 5px solid black" class="uk-padding"><p>
+                La bonne réponse était... </p>
+            </div>
             <div class=" uk-flex uk-flex-center uk-hidden@s">
                 <ul class="uk-pagination" uk-margin>
-                    <li><a href="#questionScreen3"><span uk-pagination-previous></span></a></li>
+                    <li><a href="#questionScreen3"><span class="toPreviousQuestion" uk-pagination-previous></span></a>
+                    </li>
                     <li><a class="navToQ1Phone" href="#questionScreen1">1</a></li>
                     <li><a class="navToQ2Phone" href="#questionScreen2">2</a></li>
                     <li><a class="navToQ3Phone" href="#questionScreen3">3</a></li>
