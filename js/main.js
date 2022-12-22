@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionFalse4 = document.getElementById("explicationScreenFalse4");
     let questionTrue4 = document.getElementById("explicationScreenTrue4");
     let redoBtn = document.getElementById("redoBtn");
+    let redoBtnPhone = document.getElementById("redoBtnPhone");
     let startBtn = document.getElementById("startBtn");
     let answerTotal = document.getElementById("answerTotal");
+    let answerTotalPhone = document.getElementById("answerTotalPhone");
     let navToQ1 = document.getElementById("navToQ1");
     let navToQ2 = document.getElementById("navToQ2");
     let navToQ3 = document.getElementById("navToQ3");
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let navToQ4Phone = document.querySelectorAll(".navToQ4Phone");
     let answerCorrect = 0;
     let pourcentage = document.getElementById("pourcentage");
+    let pourcentagePhone = document.getElementById("pourcentagePhone");
     let questionAnswered = document.getElementById("questionAnswered");
     let indice1 = document.getElementById("indice1");
     let indice2 = document.getElementById("indice2");
@@ -31,10 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let indiceText3 = document.getElementById("indiceText3");
     let indiceText4 = document.getElementById("indiceText4");
     let endOfTheQuiz = document.getElementById("endOfTheQuiz");
+    let endOfTheQuizPhone = document.getElementById("endOfTheQuizPhone");
     let explicationScreenNoAnswer1 = document.getElementById("explicationScreenNoAnswer1");
     let explicationScreenNoAnswer2 = document.getElementById("explicationScreenNoAnswer2");
     let explicationScreenNoAnswer3 = document.getElementById("explicationScreenNoAnswer3");
     let explicationScreenNoAnswer4 = document.getElementById("explicationScreenNoAnswer4");
+    let linkWhenWrong1 = document.getElementById("linkWhenWrong1");
+    let linkWhenWrong2 = document.getElementById("linkWhenWrong2");
+    let linkWhenWrong3 = document.getElementById("linkWhenWrong3");
+    let linkWhenWrong4 = document.getElementById("linkWhenWrong4");
+    let sujetsARevoir = document.getElementById("sujetsARevoir");
+    let sujetsARevoirPhone = document.getElementById("sujetsARevoirPhone");
+    let linkWhenWrong1Phone = document.getElementById("linkWhenWrong1Phone");
+    let linkWhenWrong2Phone = document.getElementById("linkWhenWrong2Phone");
+    let linkWhenWrong3Phone = document.getElementById("linkWhenWrong3Phone");
+    let linkWhenWrong4Phone = document.getElementById("linkWhenWrong4Phone");
+    let progressBar = document.getElementById("progressBar");
+    let progressBarPhone = document.getElementById("progressBarPhone");
 
 
     let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
@@ -86,12 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (questionAnswers[0] === "36" || questionAnswers[0] === "42") {
             questionTrue1.style.display = "none";
             questionFalse1.style.display = "none";
+            linkWhenWrong1.style.display = "block";
+            sujetsARevoir.style.display = "block";
 
         }
         else {
             questionTrue1.style.display = "none";
             questionFalse1.style.display = "none";
             explicationScreenNoAnswer1.style.display = "block";
+            linkWhenWrong1.style.display = "block";
+            sujetsARevoir.style.display = "block";
 
         }
 
@@ -103,11 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (questionAnswers[1] === "Non" || questionAnswers[1] === "Absolument pas") {
             questionTrue2.style.display = "none";
             questionFalse2.style.display = "block";
+            linkWhenWrong2.style.display = "block";
+            sujetsARevoir.style.display = "block";
         }
         else {
             questionTrue2.style.display = "none";
             questionFalse2.style.display = "none";
             explicationScreenNoAnswer2.style.display = "block";
+            linkWhenWrong2.style.display = "block";
+            sujetsARevoir.style.display = "block";
 
         }
 
@@ -119,12 +143,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (questionAnswers[2] === "Non" || questionAnswers[2] === "Absolument pas") {
             questionTrue3.style.display = "none";
             questionFalse3.style.display = "block";
+            linkWhenWrong3.style.display = "block";
+            sujetsARevoir.style.display = "block";
         }
 
         else {
             questionTrue3.style.display = "none";
             questionFalse3.style.display = "none";
             explicationScreenNoAnswer3.style.display = "block";
+            linkWhenWrong3.style.display = "block";
+            sujetsARevoir.style.display = "block";
 
         }
 
@@ -136,15 +164,111 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (questionAnswers[3] === "Oui" || questionAnswers[3] === "Absolument pas") {
             questionTrue4.style.display = "none";
             questionFalse4.style.display = "block";
+            linkWhenWrong4.style.display = "block";
+            sujetsARevoir.style.display = "block";
         }
         else {
             questionTrue4.style.display = "none";
             questionFalse4.style.display = "none";
             explicationScreenNoAnswer4.style.display = "block";
+            linkWhenWrong4.style.display = "block";
+            sujetsARevoir.style.display = "block";
 
         }
     })
+    endOfTheQuizPhone.addEventListener('click', function () {
 
+        endOfQuiz();
+
+        let questionAnswers = [localStorage.getItem("quizQuestion1"), localStorage.getItem("quizQuestion2"), localStorage.getItem("quizQuestion3"), localStorage.getItem("quizQuestion4")];
+        console.log(questionAnswers[0]);
+        console.log(questionAnswers[1]);
+        console.log(questionAnswers[2]);
+        console.log(questionAnswers[3]);
+
+        if (questionAnswers[0] === "18") {
+
+            questionTrue1.style.display = "block";
+            questionFalse1.style.display = "none";
+            answerCorrect++;
+        } else if (questionAnswers[0] === "36" || questionAnswers[0] === "42") {
+            questionTrue1.style.display = "none";
+            questionFalse1.style.display = "none";
+            linkWhenWrong1Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+
+
+        }
+        else {
+            questionTrue1.style.display = "none";
+            questionFalse1.style.display = "none";
+            explicationScreenNoAnswer1.style.display = "block";
+            linkWhenWrong1Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+
+        }
+
+        if (questionAnswers[1] === "Oui") {
+
+            questionTrue2.style.display = "block";
+            questionFalse2.style.display = "none";
+            answerCorrect++;
+        } else if (questionAnswers[1] === "Non" || questionAnswers[1] === "Absolument pas") {
+            questionTrue2.style.display = "none";
+            questionFalse2.style.display = "block";
+            linkWhenWrong2Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+        }
+        else {
+            questionTrue2.style.display = "none";
+            questionFalse2.style.display = "none";
+            explicationScreenNoAnswer2.style.display = "block";
+            linkWhenWrong2Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+
+        }
+
+        if (questionAnswers[2] === "Oui") {
+
+            questionTrue3.style.display = "block";
+            questionFalse3.style.display = "none";
+            answerCorrect++;
+        } else if (questionAnswers[2] === "Non" || questionAnswers[2] === "Absolument pas") {
+            questionTrue3.style.display = "none";
+            questionFalse3.style.display = "block";
+            linkWhenWrong3Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+        }
+
+        else {
+            questionTrue3.style.display = "none";
+            questionFalse3.style.display = "none";
+            explicationScreenNoAnswer3.style.display = "block";
+            linkWhenWrong3Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+
+        }
+
+        if (questionAnswers[3] === "Non") {
+
+            questionTrue4.style.display = "block";
+            questionFalse4.style.display = "none";
+            answerCorrect++;
+        } else if (questionAnswers[3] === "Oui" || questionAnswers[3] === "Absolument pas") {
+            questionTrue4.style.display = "none";
+            questionFalse4.style.display = "block";
+            linkWhenWrong4Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+        }
+        else {
+            questionTrue4.style.display = "none";
+            questionFalse4.style.display = "none";
+            explicationScreenNoAnswer4.style.display = "block";
+            linkWhenWrong4Phone.style.display = "block";
+            sujetsARevoirPhone.style.display = "block";
+
+        }
+    })
 
     redoBtn.addEventListener('click', function () { //recommencer le quiz et effacer les réponses + clear local storage + effacer les réponses cochées
         questionTrue1.style.display = "none";
@@ -160,6 +284,22 @@ document.addEventListener("DOMContentLoaded", function () {
         checkAnswer();
         location.reload();
     })
+
+    redoBtnPhone.addEventListener('click', function () { //recommencer le quiz et effacer les réponses + clear local storage + effacer les réponses cochées
+        questionTrue1.style.display = "none";
+        questionFalse1.style.display = "none";
+        questionTrue2.style.display = "none";
+        questionFalse2.style.display = "none";
+        questionTrue3.style.display = "none";
+        questionFalse3.style.display = "none";
+        questionTrue4.style.display = "none";
+        questionFalse4.style.display = "none";
+        localStorage.clear();
+        console.clear();
+        checkAnswer();
+        location.reload();
+    })
+
 
     indice1.addEventListener('mouseover', function () {
         indiceText1.style.display = "block";
@@ -264,22 +404,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function answerCount() {
 
-        let answerCount = 0;
+        let answersCount = 0;
+        let answerCountPhone = 0;
         if (localStorage.getItem("quizQuestion1") === "18") {
-            answerCount++;
+            answersCount++;
+            answerCountPhone++;
         }
         if (localStorage.getItem("quizQuestion2") === "Oui") {
-            answerCount++;
+            answersCount++;
+            answerCountPhone++;
         }
         if (localStorage.getItem("quizQuestion3") === "Oui") {
-            answerCount++;
+            answersCount++;
+            answerCountPhone++;
         }
         if (localStorage.getItem("quizQuestion4") === "Non") {
-            answerCount++;
+            answersCount++;
+            answerCountPhone++;
         }
-        answerTotal.innerHTML = answerCount;
-        pourcentage.innerHTML = (answerCount / 4) * 100;
+
+        answerTotal.innerHTML = answersCount;
+        pourcentage.innerHTML = (answersCount / 4) * 100;
+        answerTotalPhone.innerHTML = answersCount;
+        pourcentagePhone.innerHTML = (answersCount / 4) * 100;
         console.log(answerCount);
+        progressBar.value = (answersCount / 4) * 100;
+        progressBarPhone.value = (answersCount / 4) * 100;
         return answerCount;
 
     }
