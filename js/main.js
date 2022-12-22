@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let indiceText2 = document.getElementById("indiceText2");
     let indiceText3 = document.getElementById("indiceText3");
     let indiceText4 = document.getElementById("indiceText4");
-    let  endOfTheQuiz = document.getElementById("endOfTheQuiz");
+    let endOfTheQuiz = document.getElementById("endOfTheQuiz");
 
 
     let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
@@ -45,6 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
             checkAnswer();
         })
     })
+
+    let previousBtns = document.querySelectorAll(".toPreviousQuestion")// Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
+    previousBtns.forEach(function (previousBtn) {
+        previousBtn.addEventListener('click', function () {
+            let questionPrevious = this.getAttribute('data-question');
+            console.log(questionPrevious);
+            let answerPrevious = document.querySelector("input[name=" + questionPrevious + "]:checked").value;
+            console.log(answerPrevious);
+            localStorage.setItem(questionPrevious, answerPrevious);
+            console.log(answerCount())
+            checkAnswer();
+        })
+    })
+
+
 
     startBtn.addEventListener('click', function () {
         localStorage.clear();
@@ -75,6 +90,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     indice1.addEventListener('mouseout', function () {
         indiceText1.style.display = "none";
+    })
+
+    indice2.addEventListener('mouseover', function () {
+        indiceText2.style.display = "block";
+    })
+
+    indice2.addEventListener('mouseout', function () {
+        indiceText2.style.display = "none";
+    })
+
+    indice3.addEventListener('mouseover', function () {
+        indiceText3.style.display = "block";
+    })
+
+    indice3.addEventListener('mouseout', function () {
+        indiceText3.style.display = "none";
+    })
+
+    indice4.addEventListener('mouseover', function () {
+        indiceText4.style.display = "block";
+    })
+
+    indice4.addEventListener('mouseout', function () {
+        indiceText4.style.display = "none";
     })
     let question1Answers = document.querySelectorAll("input[name=quizQuestion1]"); // Vérification de la réponse et affichage des textes d'explication
     question1Answers.forEach(function (question1Answer) {
@@ -221,59 +260,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    function endOfQuiz () {
+    function endOfQuiz(){
+
+        navToQ1.classList.remove("answered");
+        navToQ2.classList.remove("answered");
+        navToQ3.classList.remove("answered");
+        navToQ4.classList.remove("answered");
 
         let hasAnsweredEnd1 = (localStorage.getItem("quizQuestion1") !== null);
         if (hasAnsweredEnd1 && localStorage.getItem("quizQuestion1") === "18") {
             navToQ1.classList.add("answeredRight");
             navToQ1Phone.forEach(function (navToQ1Phone) {
                 navToQ1Phone.style.color = "#7ca236";
-            })}
-
-        else if (hasAnsweredEnd1 && localStorage.getItem("quizQuestion1") !== "18") {
+            })
+        } else {
             navToQ1.classList.add("answeredFalse");
             navToQ1Phone.forEach(function (navToQ1Phone) {
                 navToQ1Phone.style.color = "#ff0000";
             })
-    }
+        }
 
         let hasAnsweredEnd2 = (localStorage.getItem("quizQuestion2") !== null);
-        if (hasAnsweredEnd2 && localStorage.getItem("quizQuestion2") !== "Oui") {
+        if (hasAnsweredEnd2 && localStorage.getItem("quizQuestion2") === "Oui") {
+            navToQ2.classList.add("answeredRight");
+            navToQ2Phone.forEach(function (navToQ2Phone) {
+                navToQ2Phone.style.color = "#7ca236";
+            })
+        } else {
             navToQ2.classList.add("answeredFalse");
             navToQ2Phone.forEach(function (navToQ2Phone) {
                 navToQ2Phone.style.color = "#ff0000";
             })
-        } else if (hasAnsweredEnd2 && localStorage.getItem("quizQuestion2") === "Oui") {
-            navToQ2.classList.add("answeredRight");
-            navToQ2Phone.forEach(function (navToQ2Phone) {
-                navToQ2Phone.style.color = "#7ca236";
-
-            })
-
-        let hasAnsweredEnd3 = (localStorage.getItem("quizQuestion3") !== null);
-        if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") !== "Oui") {
-            navToQ3.classList.add("answeredFalse");
-            navToQ3Phone.forEach(function (navToQ3Phone) {
-                navToQ3Phone.style.color = "#ff0000";
-            })
-        } else if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") === "Oui") {
-            navToQ3.classList.add("answeredRight");
-            navToQ3Phone.forEach(function (navToQ3Phone) {
-                navToQ3Phone.style.color = "#7ca236";
-            })
         }
 
-        let hasAnsweredEnd4 = (localStorage.getItem("quizQuestion4") !== null);
-        if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") !== "Non") {
-            navToQ4.classList.add("answeredFalse");
-            navToQ4Phone.forEach(function (navToQ4Phone) {
-                navToQ4Phone.style.color = "#ff0000";
-            })
-        } else if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") === "Non") {
-            navToQ4.classList.add("answeredRight");
-            navToQ4Phone.forEach(function (navToQ4Phone) {
-                navToQ4Phone.style.color = "#7ca236";
-            })
+            let hasAnsweredEnd3 = (localStorage.getItem("quizQuestion3") !== null);
+            if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") === "Oui") {
+                // navToQ3.classList.remove("answered");
+                navToQ3.classList.add("answeredRight");
+                navToQ3Phone.forEach(function (navToQ3Phone) {
+                    navToQ3Phone.style.color = "#7ca236";
+                })
+            } else {
+                // navToQ3.classList.remove("answered");
+                navToQ3.classList.add("answeredFalse");
+                navToQ3Phone.forEach(function (navToQ3Phone) {
+                    navToQ3Phone.style.color = "#ff0000";
+                })
+            }
+
+            let hasAnsweredEnd4 = (localStorage.getItem("quizQuestion4") !== null);
+            if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") === "Non") {
+                // navToQ4.classList.remove("answered");
+                navToQ4.classList.add("answeredRight");
+                navToQ4Phone.forEach(function (navToQ4Phone) {
+                    navToQ4Phone.style.color = "#7ca236";
+                })
+            } else {
+                // navToQ4.classList.remove("answered");
+                navToQ4.classList.add("answeredFalse");
+                navToQ4Phone.forEach(function (navToQ4Phone) {
+                    navToQ4Phone.style.color = "#ff0000";
+                })
+            }
         }
-    }}
 })
