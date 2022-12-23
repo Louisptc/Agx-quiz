@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let linkWhenWrong4Phone = document.getElementById("linkWhenWrong4Phone");
     let progressBar = document.getElementById("progressBar");
     let progressBarPhone = document.getElementById("progressBarPhone");
+    let answerSelected = document.querySelectorAll(".answerSelected");
 
 
     let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     endOfTheQuiz.addEventListener('click', function () {
+        progressBar.value = 0;
         endOfQuiz();
 
         let questionAnswers = [localStorage.getItem("quizQuestion1"), localStorage.getItem("quizQuestion2"), localStorage.getItem("quizQuestion3"), localStorage.getItem("quizQuestion4")];
@@ -105,8 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             linkWhenWrong1.style.display = "block";
             sujetsARevoir.style.display = "block";
 
-        }
-        else {
+        } else {
             questionTrue1.style.display = "none";
             questionFalse1.style.display = "none";
             explicationScreenNoAnswer1.style.display = "block";
@@ -125,8 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse2.style.display = "block";
             linkWhenWrong2.style.display = "block";
             sujetsARevoir.style.display = "block";
-        }
-        else {
+        } else {
             questionTrue2.style.display = "none";
             questionFalse2.style.display = "none";
             explicationScreenNoAnswer2.style.display = "block";
@@ -145,9 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse3.style.display = "block";
             linkWhenWrong3.style.display = "block";
             sujetsARevoir.style.display = "block";
-        }
-
-        else {
+        } else {
             questionTrue3.style.display = "none";
             questionFalse3.style.display = "none";
             explicationScreenNoAnswer3.style.display = "block";
@@ -166,8 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse4.style.display = "block";
             linkWhenWrong4.style.display = "block";
             sujetsARevoir.style.display = "block";
-        }
-        else {
+        } else {
             questionTrue4.style.display = "none";
             questionFalse4.style.display = "none";
             explicationScreenNoAnswer4.style.display = "block";
@@ -198,8 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sujetsARevoirPhone.style.display = "block";
 
 
-        }
-        else {
+        } else {
             questionTrue1.style.display = "none";
             questionFalse1.style.display = "none";
             explicationScreenNoAnswer1.style.display = "block";
@@ -218,8 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse2.style.display = "block";
             linkWhenWrong2Phone.style.display = "block";
             sujetsARevoirPhone.style.display = "block";
-        }
-        else {
+        } else {
             questionTrue2.style.display = "none";
             questionFalse2.style.display = "none";
             explicationScreenNoAnswer2.style.display = "block";
@@ -238,9 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse3.style.display = "block";
             linkWhenWrong3Phone.style.display = "block";
             sujetsARevoirPhone.style.display = "block";
-        }
-
-        else {
+        } else {
             questionTrue3.style.display = "none";
             questionFalse3.style.display = "none";
             explicationScreenNoAnswer3.style.display = "block";
@@ -259,8 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
             questionFalse4.style.display = "block";
             linkWhenWrong4Phone.style.display = "block";
             sujetsARevoirPhone.style.display = "block";
-        }
-        else {
+        } else {
             questionTrue4.style.display = "none";
             questionFalse4.style.display = "none";
             explicationScreenNoAnswer4.style.display = "block";
@@ -428,73 +420,82 @@ document.addEventListener("DOMContentLoaded", function () {
         answerTotalPhone.innerHTML = answersCount;
         pourcentagePhone.innerHTML = (answersCount / 4) * 100;
         console.log(answerCount);
-        progressBar.value = (answersCount / 4) * 100;
-        progressBarPhone.value = (answersCount / 4) * 100;
-        return answerCount;
 
+        for (let progressBar1 = 0; progressBar1 <= (answersCount / 4) * 100; progressBar1++) {
+            setTimeout(function () {
+            progressBar1 += 1;
+            progressBar.value = progressBar1;
+            progressBarPhone.value = progressBar1;
+            }, 1000);}
+            // progressBar.value = (answersCount / 4) * 100;
+            // progressBarPhone.value = (answersCount / 4) * 100;
+            return answerCount;
+
+        }
+
+        function endOfQuiz() {
+
+            navToQ1.classList.remove("answered");
+            navToQ2.classList.remove("answered");
+            navToQ3.classList.remove("answered");
+            navToQ4.classList.remove("answered");
+
+            let hasAnsweredEnd1 = (localStorage.getItem("quizQuestion1") !== null);
+            if (hasAnsweredEnd1 && localStorage.getItem("quizQuestion1") === "18") {
+                navToQ1.classList.add("answeredRight");
+                navToQ1Phone.forEach(function (navToQ1Phone) {
+                    navToQ1Phone.style.color = "#7ca236";
+                })
+            } else {
+                navToQ1.classList.add("answeredFalse");
+                navToQ1Phone.forEach(function (navToQ1Phone) {
+                    navToQ1Phone.style.color = "#ff0000";
+                })
+            }
+
+            let hasAnsweredEnd2 = (localStorage.getItem("quizQuestion2") !== null);
+            if (hasAnsweredEnd2 && localStorage.getItem("quizQuestion2") === "Oui") {
+                navToQ2.classList.add("answeredRight");
+                navToQ2Phone.forEach(function (navToQ2Phone) {
+                    navToQ2Phone.style.color = "#7ca236";
+                })
+            } else {
+                navToQ2.classList.add("answeredFalse");
+                navToQ2Phone.forEach(function (navToQ2Phone) {
+                    navToQ2Phone.style.color = "#ff0000";
+                })
+            }
+
+            let hasAnsweredEnd3 = (localStorage.getItem("quizQuestion3") !== null);
+            if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") === "Oui") {
+                // navToQ3.classList.remove("answered");
+                navToQ3.classList.add("answeredRight");
+                navToQ3Phone.forEach(function (navToQ3Phone) {
+                    navToQ3Phone.style.color = "#7ca236";
+                })
+            } else {
+                // navToQ3.classList.remove("answered");
+                navToQ3.classList.add("answeredFalse");
+                navToQ3Phone.forEach(function (navToQ3Phone) {
+                    navToQ3Phone.style.color = "#ff0000";
+                })
+            }
+
+            let hasAnsweredEnd4 = (localStorage.getItem("quizQuestion4") !== null);
+            if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") === "Non") {
+                // navToQ4.classList.remove("answered");
+                navToQ4.classList.add("answeredRight");
+                navToQ4Phone.forEach(function (navToQ4Phone) {
+                    navToQ4Phone.style.color = "#7ca236";
+                })
+            } else {
+                // navToQ4.classList.remove("answered");
+                navToQ4.classList.add("answeredFalse");
+                navToQ4Phone.forEach(function (navToQ4Phone) {
+                    navToQ4Phone.style.color = "#ff0000";
+                })
+            }
+        }
     }
 
-    function endOfQuiz() {
-
-        navToQ1.classList.remove("answered");
-        navToQ2.classList.remove("answered");
-        navToQ3.classList.remove("answered");
-        navToQ4.classList.remove("answered");
-
-        let hasAnsweredEnd1 = (localStorage.getItem("quizQuestion1") !== null);
-        if (hasAnsweredEnd1 && localStorage.getItem("quizQuestion1") === "18") {
-            navToQ1.classList.add("answeredRight");
-            navToQ1Phone.forEach(function (navToQ1Phone) {
-                navToQ1Phone.style.color = "#7ca236";
-            })
-        } else {
-            navToQ1.classList.add("answeredFalse");
-            navToQ1Phone.forEach(function (navToQ1Phone) {
-                navToQ1Phone.style.color = "#ff0000";
-            })
-        }
-
-        let hasAnsweredEnd2 = (localStorage.getItem("quizQuestion2") !== null);
-        if (hasAnsweredEnd2 && localStorage.getItem("quizQuestion2") === "Oui") {
-            navToQ2.classList.add("answeredRight");
-            navToQ2Phone.forEach(function (navToQ2Phone) {
-                navToQ2Phone.style.color = "#7ca236";
-            })
-        } else {
-            navToQ2.classList.add("answeredFalse");
-            navToQ2Phone.forEach(function (navToQ2Phone) {
-                navToQ2Phone.style.color = "#ff0000";
-            })
-        }
-
-        let hasAnsweredEnd3 = (localStorage.getItem("quizQuestion3") !== null);
-        if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") === "Oui") {
-            // navToQ3.classList.remove("answered");
-            navToQ3.classList.add("answeredRight");
-            navToQ3Phone.forEach(function (navToQ3Phone) {
-                navToQ3Phone.style.color = "#7ca236";
-            })
-        } else {
-            // navToQ3.classList.remove("answered");
-            navToQ3.classList.add("answeredFalse");
-            navToQ3Phone.forEach(function (navToQ3Phone) {
-                navToQ3Phone.style.color = "#ff0000";
-            })
-        }
-
-        let hasAnsweredEnd4 = (localStorage.getItem("quizQuestion4") !== null);
-        if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") === "Non") {
-            // navToQ4.classList.remove("answered");
-            navToQ4.classList.add("answeredRight");
-            navToQ4Phone.forEach(function (navToQ4Phone) {
-                navToQ4Phone.style.color = "#7ca236";
-            })
-        } else {
-            // navToQ4.classList.remove("answered");
-            navToQ4.classList.add("answeredFalse");
-            navToQ4Phone.forEach(function (navToQ4Phone) {
-                navToQ4Phone.style.color = "#ff0000";
-            })
-        }
-    }
-})
+)

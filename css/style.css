@@ -94,3 +94,13 @@ input:checked {
 .navToQ4Phone {
     color: blue;
 }
+
+.answerSelectedRight {
+    background-color: #7ca236;
+    color: white;
+}
+
+.answerSelectedWrong {
+    background-color: #ff0000;
+    color: white;
+}
