@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             answerCorrect++;
         } else if (questionAnswers[0] === "36" || questionAnswers[0] === "42") {
             questionTrue1.style.display = "none";
-            questionFalse1.style.display = "none";
+            questionFalse1.style.display = "block";
             linkWhenWrong1.style.display = "block";
             sujetsARevoir.style.display = "block";
 
