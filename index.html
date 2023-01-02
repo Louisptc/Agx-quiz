@@ -91,7 +91,7 @@
                 </ul>
             </div>
             <div class="uk-position-top-left uk-margin-medium uk-margin-medium-left uk-visible@s">
-                <div uk-sticky="start: 50; end: #resultScreen; offset: 50"
+                <div uk-sticky="start:1; end: #resultScreen; offset: 50"
                      style="background-color: darkgrey; border-radius: 10px">
                     <p class="uk-flex uk-flex-center uk-padding uk-padding-remove-bottom"><strong>Table des
                         questions
@@ -106,8 +106,16 @@
                         <a id="navToQ4" class="uk-button-small uk-button-secondary uk-margin-small-left"
                            href="#questionScreen4">4</a>
                     </div>
-                    <div class="uk-padding">
+                    <div class="uk-padding uk-padding-remove-bottom">
                         <p>Nombre de questions faites : <span id="questionAnswered">0</span>/4</p>
+                    </div>
+                    <div class="timer uk-padding uk-padding-remove-top uk-flex">
+                        <div class="timeLeftText">Time Left :</div>
+                        <div class="timerSec uk-margin-left"></div>
+                    </div>
+                    <div>
+                        <progress class="timeLine uk-progress uk-align-center" value="max" max="20"
+                                  style="width: 90%"></progress>
                     </div>
                 </div>
             </div>
@@ -305,7 +313,7 @@
                     </ul>
                 </div>
                 <div>
-                    <progress id="progressBar" class="uk-progress" value="" max="100"></progress>
+                    <progress id="progressBar" class="uk-progress" value="0" max="100"></progress>
                 </div>
             </div>
             <div class=" uk-flex uk-flex-center uk-hidden@s">
@@ -331,8 +339,8 @@
             <div class="uk-align-center uk-padding" style="background-color: rgb(236,236,236);border-radius: 15px">
                 <h4><strong><u>Résultats</u></strong></h4>
                 <div class="uk-padding">
-                    <p>Score : <span id="answerTotalPhone">X</span>/4</p>
-                    <p><span id="pourcentagePhone">X</span> % de réussite</p>
+                    <p>Score : <span id="answerTotalPhone">0</span>/4</p>
+                    <p><span id="pourcentagePhone">0</span> % de réussite</p>
                     <h5 id="sujetsARevoirPhone" style="display: none">Sujets à revoir</h5>
                     <ul class="uk-list uk-list-hyphen">
                         <li id="linkWhenWrong1Phone" style="display: none">
@@ -351,7 +359,7 @@
                 </div>
                 <div>
                     <!--                    <iconify-icon icon="carbon:progress-bar" width="100" height="70"></iconify-icon>-->
-                    <progress id="progressBarPhone" class="uk-progress" value="50" max="100"></progress>
+                    <progress id="progressBarPhone" class="uk-progress" value="0" max="100"></progress>
                 </div>
             </div>
             <div class=" uk-flex uk-flex-center uk-hidden@s">
