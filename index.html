@@ -38,6 +38,16 @@
             </div>
         </div>
     </section>
+<div>
+    <a class="uk-button uk-button-default" href="#modalEndTimer" uk-toggle style="display: none" id="btnModalEnd">Open</a>
+
+    <div id="modalEndTimer" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <p>Temps écoulé, découvrez votre score !</p>
+            <button class="uk-button-primary uk-modal-close" id="showResults"> Résultats</button>
+        </div>
+    </div>
+</div>
 
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-small" id="questionScreen1" uk-height-viewport>
         <div>
@@ -70,6 +80,16 @@
             <div class="uk-flex uk-flex-middle uk-flex-center uk-align-cente">
                 <a data-question="quizQuestion1" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#questionScreen2">Next</a>
+            </div>
+            <div class="uk-hidden@s">
+                <div class="timerPhone uk-padding uk-padding-remove-top uk-flex">
+                    <div class="timeLeftTextPhone">Temps restant :</div>
+                    <div class="timerSecPhone uk-margin-left"></div>
+                </div>
+                <div>
+                    <progress class="timeLinePhone uk-progress uk-align-center" value="max" max="20"
+                              style="width: 90%"></progress>
+                </div>
             </div>
             <div id="explicationScreenFalse1" style="display : none;border : 5px solid black" class="uk-padding">
                 <p>
@@ -110,7 +130,7 @@
                         <p>Nombre de questions faites : <span id="questionAnswered">0</span>/4</p>
                     </div>
                     <div class="timer uk-padding uk-padding-remove-top uk-flex">
-                        <div class="timeLeftText">Time Left :</div>
+                        <div class="timeLeftText">Temps restant :</div>
                         <div class="timerSec uk-margin-left"></div>
                     </div>
                     <div>
@@ -121,6 +141,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="uk-flex uk-flex-middle uk-flex-center uk-padding-medium" id="questionScreen2" uk-height-viewport>
         <div>
@@ -151,6 +172,16 @@
                    href="#questionScreen1">Previous</a>
                 <a data-question="quizQuestion2" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#questionScreen3">Next</a>
+            </div>
+            <div class="uk-hidden@s">
+                <div class="timerPhone uk-padding uk-padding-remove-top uk-flex">
+                    <div class="timeLeftTextPhone">Temps restant :</div>
+                    <div class="timerSecPhone uk-margin-left"></div>
+                </div>
+                <div>
+                    <progress class="timeLinePhone uk-progress uk-align-center" value="max" max="20"
+                              style="width: 90%"></progress>
+                </div>
             </div>
             <div id="explicationScreenFalse2" style="display : none;border : 5px solid black" class="uk-padding"><p>
                 Réponse fausse,
@@ -206,6 +237,16 @@
                    href="#questionScreen2">Previous</a>
                 <a data-question="quizQuestion3" class="toNextQuestion uk-button uk-button-primary uk-width-expend"
                    href="#questionScreen4">Next</a>
+            </div>
+            <div class="uk-hidden@s">
+                <div class="timerPhone uk-padding uk-padding-remove-top uk-flex">
+                    <div class="timeLeftTextPhone">Temps restant :</div>
+                    <div class="timerSecPhone uk-margin-left"></div>
+                </div>
+                <div>
+                    <progress class="timeLinePhone uk-progress uk-align-center" value="max" max="20"
+                              style="width: 90%"></progress>
+                </div>
             </div>
             <div id="explicationScreenFalse3" style="display : none;border : 5px solid black" class="uk-padding"><p>
                 Réponse fausse,
@@ -265,6 +306,16 @@
                 <a data-question=quizQuestion4" id="endOfTheQuizPhone"
                    class="toNextQuestion uk-button uk-button-primary uk-width-expend uk-hidden@s"
                    href="#resultScreenPhone">Fin</a>
+            </div>
+            <div class="uk-hidden@s">
+                <div class="timerPhone uk-padding uk-padding-remove-top uk-flex">
+                    <div class="timeLeftTextPhone">Temps restant :</div>
+                    <div class="timerSecPhone uk-margin-left"></div>
+                </div>
+                <div>
+                    <progress class="timeLinePhone uk-progress uk-align-center" value="max" max="20"
+                              style="width: 90%"></progress>
+                </div>
             </div>
             <div id="explicationScreenFalse4" style="display : none;border : 5px solid black" class="uk-padding"><p>
                 Réponse fausse,
@@ -358,7 +409,6 @@
                     </ul>
                 </div>
                 <div>
-                    <!--                    <iconify-icon icon="carbon:progress-bar" width="100" height="70"></iconify-icon>-->
                     <progress id="progressBarPhone" class="uk-progress" value="0" max="100"></progress>
                 </div>
             </div>

@@ -54,6 +54,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let answerSelected = document.querySelectorAll(".answerSelected");
     const timeText = document.querySelector(".timer .timeLeftText");
     const timeCount = document.querySelector(".timer .timerSec");
+    const timeTextPhone = document.querySelector(".timer .timeLeftText");
+    const timeCountPhone = document.querySelector(".timer .timerSec");
+    const btnModalEnd = document.getElementById("btnModalEnd");
+    let showResult = document.getElementById("showResult");
+    let modalEndTimer = document.getElementById("modalEndTimer");
 
 
     let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
@@ -87,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.clear();
         console.log(localStorage);
         startTimer(20);
+        // startTimerPhone(20);
 
     })
 
@@ -104,19 +110,58 @@ document.addEventListener("DOMContentLoaded", function () {
             timeCount.innerHTML = seconds;
             timer--;
             if (timer < 0) {
-                clearInterval(interval);
+                btnModalEnd.click();
                 timeText.innerHTML = "Temps écoulé";
                 timeCount.innerHTML = "";
-                checkAnswer();
-                endOfQuiz();
-                answerCount();
-                window.scrollTo(0, 1000000);
+                clearInterval(interval);
+
             }
             endOfTheQuiz.addEventListener('click', function () {
                 clearInterval(interval);
             })
         }
     }
+    modalEndTimer.addEventListener('click', function () {
+        checkAnswer();
+        endOfQuiz();
+        answerCount();
+        window.scrollTo(0, 1000000);
+    })
+    // showResult.addEventListener('click', function () {
+    //     checkAnswer();
+    //     endOfQuiz();
+    //     answerCount();
+    //     window.scrollTo(0, 1000000);
+    // })
+
+    // function startTimerPhone(time) {
+    //     let timer = time;
+    //     let seconds = timer;
+    //     let timeLine = document.querySelector(".timeLinePhone");
+    //     timeLine.value = timer;
+    //     timeCountPhone.innerHTML = seconds;
+    //     let interval = setInterval(updateCount, 1000);
+    //
+    //     function updateCount() {
+    //         let seconds = timer;
+    //         timeLine.value = timer;
+    //         timeCountPhone.innerHTML = seconds;
+    //         timer--;
+    //         if (timer < 0) {
+    //             clearInterval(interval);
+    //             timeTextPhone.innerHTML = "Temps écoulé";
+    //             timeCountPhone.innerHTML = "";
+    //             checkAnswer();
+    //             endOfQuiz();
+    //             answerCount();
+    //             window.scrollTo(0, 1000000);
+    //         }
+    //         endOfTheQuizPhone.addEventListener('click', function () {
+    //             clearInterval(interval);
+    //         })
+    //     }
+    // }
+
 
 
     endOfTheQuiz.addEventListener('click', function () {
