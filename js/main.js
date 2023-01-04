@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    //  Get all the texts of each questions and answers
+    //  Get all the texts of each question and answers
     let questionFalse1 = document.getElementById("explicationScreenFalse1");
     let questionTrue1 = document.getElementById("explicationScreenTrue1");
     let questionFalse2 = document.getElementById("explicationScreenFalse2");
