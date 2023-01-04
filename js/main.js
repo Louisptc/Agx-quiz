@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    //  Get all the texts of each questions and answers
     let questionFalse1 = document.getElementById("explicationScreenFalse1");
     let questionTrue1 = document.getElementById("explicationScreenTrue1");
     let questionFalse2 = document.getElementById("explicationScreenFalse2");
@@ -8,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let questionTrue3 = document.getElementById("explicationScreenTrue3");
     let questionFalse4 = document.getElementById("explicationScreenFalse4");
     let questionTrue4 = document.getElementById("explicationScreenTrue4");
+    let explicationScreenNoAnswer1 = document.getElementById("explicationScreenNoAnswer1");
+    let explicationScreenNoAnswer2 = document.getElementById("explicationScreenNoAnswer2");
+    let explicationScreenNoAnswer3 = document.getElementById("explicationScreenNoAnswer3");
+    let explicationScreenNoAnswer4 = document.getElementById("explicationScreenNoAnswer4");
+
+    //  Get all the buttons of each questions and answers
     let redoBtn = document.getElementById("redoBtn");
     let redoBtnPhone = document.getElementById("redoBtnPhone");
     let startBtn = document.getElementById("startBtn");
@@ -35,10 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let indiceText4 = document.getElementById("indiceText4");
     let endOfTheQuiz = document.getElementById("endOfTheQuiz");
     let endOfTheQuizPhone = document.getElementById("endOfTheQuizPhone");
-    let explicationScreenNoAnswer1 = document.getElementById("explicationScreenNoAnswer1");
-    let explicationScreenNoAnswer2 = document.getElementById("explicationScreenNoAnswer2");
-    let explicationScreenNoAnswer3 = document.getElementById("explicationScreenNoAnswer3");
-    let explicationScreenNoAnswer4 = document.getElementById("explicationScreenNoAnswer4");
     let linkWhenWrong1 = document.getElementById("linkWhenWrong1");
     let linkWhenWrong2 = document.getElementById("linkWhenWrong2");
     let linkWhenWrong3 = document.getElementById("linkWhenWrong3");
@@ -60,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let showResult = document.getElementById("showResult");
     let modalEndTimer = document.getElementById("modalEndTimer");
 
-
-    let checkBtns = document.querySelectorAll(".toNextQuestion"); // Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
+    // upload the answer of the user in the localStorage WHEN the user click on the next button
+    let checkBtns = document.querySelectorAll(".toNextQuestion");
     checkBtns.forEach(function (checkBtn) {
         checkBtn.addEventListener('click', function () {
             let question = this.getAttribute('data-question');
@@ -74,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
-    let previousBtns = document.querySelectorAll(".toPreviousQuestion")// Enregistrer le nom de la question et la réponse sélectionnée par l'utilisateur
+    // upload the answer of the user in the localStorage WHEN the user click on the Previous button
+    let previousBtns = document.querySelectorAll(".toPreviousQuestion");
     previousBtns.forEach(function (previousBtn) {
         previousBtn.addEventListener('click', function () {
             let questionPrevious = this.getAttribute('data-question');
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
-
+    // Start the quiz, empty the localStorage and start the timer
     startBtn.addEventListener('click', function () {
         localStorage.clear();
         console.log(localStorage);
@@ -96,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
+    // Function to set the timer
     function startTimer(time) {
         let timer = time;
         let seconds = timer;
@@ -103,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         timeLine.value = timer;
         timeCount.innerHTML = seconds;
         let interval = setInterval(updateCount, 1000);
-
+        // Function to make the timer go down and to stop it when it's 0
         function updateCount() {
             let seconds = timer;
             timeLine.value = timer;
@@ -116,17 +121,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(interval);
 
             }
+            // Stop the timer when the user click on the End (Fin) button
             endOfTheQuiz.addEventListener('click', function () {
                 clearInterval(interval);
             })
         }
     }
+    // Show the modal when the timer is 0
     modalEndTimer.addEventListener('click', function () {
         checkAnswer();
         endOfQuiz();
         answerCount();
         window.scrollTo(0, 1000000);
     })
+
+    // timer function but for phone, still not working
+
+
+
     // showResult.addEventListener('click', function () {
     //     checkAnswer();
     //     endOfQuiz();
@@ -163,13 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
 
 
-
+    // Put the progress bar to 0 when the user click on the End button (Fin) and display the texts
     endOfTheQuiz.addEventListener('click', function () {
-        progressBar.value = 0;
+        progressBar.value = -1;
         endOfQuiz();
         displayAnswer();
     })
 
+    // function that contains the texts to display when the user click on the End button (Fin)
     function displayAnswer() {
         let questionAnswers = [localStorage.getItem("quizQuestion1"), localStorage.getItem("quizQuestion2"), localStorage.getItem("quizQuestion3"), localStorage.getItem("quizQuestion4")];
         console.log(questionAnswers[0]);
@@ -255,19 +268,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
-
+    // function that contains the texts to display when the user click on the End button (Fin) for phone
     endOfTheQuizPhone.addEventListener('click', function () {
         endOfQuiz();
         displayAnswer();
     })
 
 
-    redoBtn.addEventListener('click', function () { //recommencer le quiz et effacer les réponses + clear local storage + effacer les réponses cochées
+    redoBtn.addEventListener('click', function () { // when the user click on the redo button (Refaire le quiz), the quiz restart
         reset()
         })
-    redoBtnPhone.addEventListener('click', function () { //recommencer le quiz et effacer les réponses + clear local storage + effacer les réponses cochées
+    redoBtnPhone.addEventListener('click', function () { // when the user click on the redo button (Refaire le quiz), the quiz restart
         reset()
         })
+        // function that reset the quiz
         function reset() {
         questionTrue1.style.display = "none";
         questionFalse1.style.display = "none";
@@ -318,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 
+    // checkanswer function that check if the user has answer to a question or not and if the answer is correct or not
     function checkAnswer() {
         let hasAnswered1 = (localStorage.getItem("quizQuestion1") !== null);
         let hasAnswered2 = (localStorage.getItem("quizQuestion2") !== null);
@@ -386,6 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // function that count the right answers
     function answerCount() {
 
         let answersCount = 0;
@@ -420,12 +436,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 progressBarPhone.value = progressBar1;
             }, 1000);
         }
-        // progressBar.value = (answersCount / 4) * 100;
-        // progressBarPhone.value = (answersCount / 4) * 100;
         return answerCount;
 
     }
 
+    // function that set the colors up on the navigation menu
     function endOfQuiz() {
 
         navToQ1.classList.remove("answered");
@@ -461,13 +476,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let hasAnsweredEnd3 = (localStorage.getItem("quizQuestion3") !== null);
         if (hasAnsweredEnd3 && localStorage.getItem("quizQuestion3") === "Oui") {
-            // navToQ3.classList.remove("answered");
             navToQ3.classList.add("answeredRight");
             navToQ3Phone.forEach(function (navToQ3Phone) {
                 navToQ3Phone.style.color = "#7ca236";
             })
         } else {
-            // navToQ3.classList.remove("answered");
             navToQ3.classList.add("answeredFalse");
             navToQ3Phone.forEach(function (navToQ3Phone) {
                 navToQ3Phone.style.color = "#ff0000";
@@ -476,13 +489,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let hasAnsweredEnd4 = (localStorage.getItem("quizQuestion4") !== null);
         if (hasAnsweredEnd4 && localStorage.getItem("quizQuestion4") === "Non") {
-            // navToQ4.classList.remove("answered");
             navToQ4.classList.add("answeredRight");
             navToQ4Phone.forEach(function (navToQ4Phone) {
                 navToQ4Phone.style.color = "#7ca236";
             })
         } else {
-            // navToQ4.classList.remove("answered");
             navToQ4.classList.add("answeredFalse");
             navToQ4Phone.forEach(function (navToQ4Phone) {
                 navToQ4Phone.style.color = "#ff0000";
